@@ -1,0 +1,25 @@
+{
+  "name": "virtual-waiting-room",
+  "version": "1.0.0",
+  "description": "AWS DynamoDB Virtual Waiting Room Challenge",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy",
+    "synth": "cdk synth"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.205.0",
+    "constructs": "^10.4.2",
+    "@aws-sdk/client-dynamodb": "^3.840.0",
+    "@aws-sdk/lib-dynamodb": "^3.840.0",
+    "@types/aws-lambda": "^8.10.149"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^24.0.0"
+  }
+}
