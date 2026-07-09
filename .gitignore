@@ -1,0 +1,31 @@
+# Node Modules
+node_modules/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+
+# Build
+dist/
+build/
+
+# AWS CDK
+cdk.out/
+
+# Environment Variables
+.env
+
+# Temporary Files
+*.tmp
+*.temp
