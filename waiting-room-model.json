@@ -1,0 +1,100 @@
+{
+  "project": "Virtual Waiting Room",
+  "version": "1.0",
+  "database": "Amazon DynamoDB",
+  "table": {
+    "tableName": "WaitingRoom",
+    "billingMode": "PAY_PER_REQUEST",
+    "primaryKey": {
+      "partitionKey": {
+        "name": "fanId",
+        "type": "String"
+      }
+    },
+    "attributes": [
+      {
+        "name": "fanId",
+        "type": "String",
+        "description": "Unique fan identifier"
+      },
+      {
+        "name": "queuePosition",
+        "type": "Number",
+        "description": "Assigned queue position"
+      },
+      {
+        "name": "entryTimestamp",
+        "type": "Number",
+        "description": "Server generated timestamp"
+      },
+      {
+        "name": "status",
+        "type": "String",
+        "description": "WAITING, ELIGIBLE or PURCHASED"
+      },
+      {
+        "name": "batchId",
+        "type": "Number",
+        "description": "Promotion batch number"
+      },
+      {
+        "name": "randomToken",
+        "type": "String",
+        "description": "Random token used to break timestamp ties"
+      },
+      {
+        "name": "estimatedWait",
+        "type": "String",
+        "description": "Estimated waiting time"
+      }
+    ],
+    "globalSecondaryIndexes": [
+      {
+        "indexName": "StatusIndex",
+        "partitionKey": {
+          "name": "status",
+          "type": "String"
+        },
+        "sortKey": {
+          "name": "queuePosition",
+          "type": "Number"
+        },
+        "projection": "ALL"
+      }
+    ]
+  },
+  "accessPatterns": [
+    {
+      "name": "JoinQueue",
+      "operation": "PutItem",
+      "description": "Insert a new fan into the waiting room"
+    },
+    {
+      "name": "GetFanStatus",
+      "operation": "GetItem",
+      "description": "Retrieve queue position and status using fanId"
+    },
+    {
+      "name": "GetWaitingFans",
+      "operation": "Query",
+      "index": "StatusIndex",
+      "description": "Retrieve waiting fans ordered by queue position"
+    },
+    {
+      "name": "PromoteFans",
+      "operation": "UpdateItem",
+      "description": "Promote waiting fans to eligible"
+    },
+    {
+      "name": "GetEligibleFans",
+      "operation": "Query",
+      "index": "StatusIndex",
+      "description": "Retrieve eligible fans"
+    },
+    {
+      "name": "CompletePurchase",
+      "operation": "UpdateItem",
+      "description": "Mark fan as purchased"
+    }
+  ]
+}
