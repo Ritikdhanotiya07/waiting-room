@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: >
+  DynamoDB Virtual Waiting Room Table
+
+Resources:
+
+  WaitingRoomTable:
+
+    Type: AWS::DynamoDB::Table
+
+    Properties:
+
+      TableName: WaitingRoom
+
+      BillingMode: PAY_PER_REQUEST
+
+      AttributeDefinitions:
+
+        - AttributeName: fanId
+          AttributeType: S
+
+        - AttributeName: status
+          AttributeType: S
+
+        - AttributeName: queuePosition
+          AttributeType: N
+
+      KeySchema:
+
+        - AttributeName: fanId
+          KeyType: HASH
+
+      GlobalSecondaryIndexes:
+
+        - IndexName: StatusIndex
+
+          KeySchema:
+
+            - AttributeName: status
+              KeyType: HASH
+
+            - AttributeName: queuePosition
+              KeyType: RANGE
+
+          Projection:
+
+            ProjectionType: ALL
+
+Outputs:
+
+  WaitingRoomTableName:
+
+    Description: Waiting Room Table
+
+    Value: !Ref WaitingRoomTable
+
+  WaitingRoomArn:
+
+    Description: Table ARN
+
+    Value: !GetAtt WaitingRoomTable.Arn
