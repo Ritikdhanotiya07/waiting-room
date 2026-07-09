@@ -1,0 +1,92 @@
+[
+  {
+    "fanId": "fan000001",
+    "queuePosition": 1,
+    "entryTimestamp": 1783459200,
+    "status": "ELIGIBLE",
+    "batchId": 1,
+    "randomToken": "A8K92L",
+    "estimatedWait": "0 minutes"
+  },
+  {
+    "fanId": "fan000002",
+    "queuePosition": 2,
+    "entryTimestamp": 1783459201,
+    "status": "ELIGIBLE",
+    "batchId": 1,
+    "randomToken": "D2M81X",
+    "estimatedWait": "0 minutes"
+  },
+  {
+    "fanId": "fan000003",
+    "queuePosition": 3,
+    "entryTimestamp": 1783459202,
+    "status": "WAITING",
+    "batchId": 2,
+    "randomToken": "J7Q51P",
+    "estimatedWait": "2 minutes"
+  },
+  {
+    "fanId": "fan000004",
+    "queuePosition": 4,
+    "entryTimestamp": 1783459203,
+    "status": "WAITING",
+    "batchId": 2,
+    "randomToken": "N4T18K",
+    "estimatedWait": "2 minutes"
+  },
+  {
+    "fanId": "fan000005",
+    "queuePosition": 5,
+    "entryTimestamp": 1783459204,
+    "status": "WAITING",
+    "batchId": 2,
+    "randomToken": "R5H23M",
+    "estimatedWait": "3 minutes"
+  },
+  {
+    "fanId": "fan000006",
+    "queuePosition": 6,
+    "entryTimestamp": 1783459205,
+    "status": "WAITING",
+    "batchId": 2,
+    "randomToken": "X9C77A",
+    "estimatedWait": "3 minutes"
+  },
+  {
+    "fanId": "fan000007",
+    "queuePosition": 7,
+    "entryTimestamp": 1783459206,
+    "status": "WAITING",
+    "batchId": 2,
+    "randomToken": "P3B91F",
+    "estimatedWait": "4 minutes"
+  },
+  {
+    "fanId": "fan000008",
+    "queuePosition": 8,
+    "entryTimestamp": 1783459207,
+    "status": "WAITING",
+    "batchId": 2,
+    "randomToken": "L6V22R",
+    "estimatedWait": "4 minutes"
+  },
+  {
+    "fanId": "fan000009",
+    "queuePosition": 9,
+    "entryTimestamp": 1783459208,
+    "status": "PURCHASED",
+    "batchId": 1,
+    "randomToken": "U8Y15D",
+    "estimatedWait": "Completed"
+  },
+  {
+    "fanId": "fan000010",
+    "queuePosition": 10,
+    "entryTimestamp": 1783459209,
+    "status": "PURCHASED",
+    "batchId": 1,
+    "randomToken": "W1N64Z",
+    "estimatedWait": "Completed"
+  }
+]
