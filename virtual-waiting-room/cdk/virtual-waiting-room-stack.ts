@@ -104,3 +104,18 @@ export class VirtualWaitingRoomStack extends cdk.Stack {
     }
 
 }
+const completePurchaseLambda = new lambda.Function(this, 'CompletePurchaseLambda', {
+
+    runtime: lambda.Runtime.NODEJS_20_X,
+
+    handler: 'index.handler',
+
+    code: lambda.Code.fromAsset('lambda/completePurchase'),
+
+    environment: {
+
+        TABLE_NAME: waitingRoomTable.tableName
+
+    }
+
+});
